@@ -127,59 +127,97 @@ public class Job {
 // Person
 //
 public class Person {
-  public var firstName : String = ""
-  public var lastName : String = ""
-  public var age : Int = 0
+    public var firstName : String = ""
+    public var lastName : String = ""
+    public var age : Int = 0
+    
+    private var _job : Job?
+    private var _spouse : Person?
 
-  public var job : Job? {
-    get {
-        return self.job
-    }
-    set(value) {
-        if value != nil {
-            self.job = value
+    public var job : Job? {
+        get {
+            return self._job
+        }
+        
+        set(value) {
+            print(age)
+            if age >= 16 {
+                self._job = value
+            } else {
+                self._job = nil
+            }
         }
     }
-  }
 
-  public var spouse : Person? {
+    public var spouse : Person? {
     get {
-        return self.spouse
+        return self._spouse
     }
     set(value) {
-        if value != nil {
-            self.spouse = value
+        if self.age >= 18 {
+            self._spouse = value
+        } else {
+            self._spouse = nil
         }
     }
-  }
-  
-  public init(firstName : String, lastName: String, age : Int) {
-    self.firstName = firstName
-    self.lastName = lastName
-    self.age = age
-  }
-  
-  public func toString() -> String {
-    return "hello"
-  }
+    }
+
+    public init(firstName : String, lastName: String, age : Int) {
+        self.firstName = firstName
+        self.lastName = lastName
+        self.age = age
+    }
+
+    public func toString() -> String {
+        print("[Person: firstName:\(self.firstName) lastName:\(self.lastName) age:\(self.age) job:\(self.job) spouse:\(self.spouse)]")
+        return "[Person: firstName:\(self.firstName) lastName:\(self.lastName) age:\(self.age) job:\(self.job) spouse:\(self.spouse)]"
+    }
 }
 
 
-//////////////////////////////////////
-//// Family
-////
-//public class Family {
-//  private var members : [Person] = []
-//  
-//  public init(spouse1: Person, spouse2: Person) {
-//  }
-//  
-//  public func haveChild(child: Person) -> Bool {
-//  }
-//  
-//  public func householdIncome() -> Int {
-//  }
-//}
+////////////////////////////////////
+// Family
+//
+public class Family {
+    private var members : [Person] = []
+
+    public init(spouse1: Person, spouse2: Person) {
+        if (spouse1.spouse == nil && spouse2.spouse == nil) {
+            spouse1.spouse = spouse2
+            spouse2.spouse = spouse1
+            members.append(spouse1)
+            members.append(spouse2)
+        }
+    }
+
+    public func haveChild(child: Person) -> Bool {
+        var over21 = false
+        
+        for member in members {
+            if member.age >= 21 {
+                over21 = true
+                break
+            }
+        }
+        
+        if over21 {
+            members.append(child)
+            return true
+        }
+        return false
+    }
+
+    public func householdIncome() -> Int {
+        var income : Int = 0
+        for member in members {
+            if member.job != nil {
+                income += member.job!.calculateIncome(2087)
+            }
+        }
+        print(income)
+        return income
+    }
+}
 
 
 
