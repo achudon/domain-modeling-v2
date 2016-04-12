@@ -38,7 +38,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SimpleDomainModelTests/PersonTests.swift"
@@ -51,14 +51,14 @@
             landmarkType = "3">
             <Locations>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "SimpleDomainModelTests.PersonTests.__deallocating_deinit"
                   moduleName = "SimpleDomainModelTests"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/iguest/Desktop/domainmodeling/SimpleDomainModel/SimpleDomainModelTests/PersonTests.swift"
-                  timestampString = "482128798.312162"
+                  urlString = "file:///Users/iguest/Desktop/domain-modeling/SimpleDomainModel/SimpleDomainModelTests/PersonTests.swift"
+                  timestampString = "482196039.858998"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -66,14 +66,14 @@
                   offsetFromSymbolStart = "4">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "SimpleDomainModelTests.PersonTests.init (invocation : Swift.Optional&lt;__ObjC.NSInvocation&gt;) -&gt; SimpleDomainModelTests.PersonTests"
                   moduleName = "SimpleDomainModelTests"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/iguest/Desktop/domainmodeling/SimpleDomainModel/SimpleDomainModelTests/PersonTests.swift"
-                  timestampString = "482128798.312364"
+                  urlString = "file:///Users/iguest/Desktop/domain-modeling/SimpleDomainModel/SimpleDomainModelTests/PersonTests.swift"
+                  timestampString = "482196039.859204"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "11"
@@ -81,14 +81,14 @@
                   offsetFromSymbolStart = "65">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "SimpleDomainModelTests.PersonTests.init (selector : ObjectiveC.Selector) -&gt; SimpleDomainModelTests.PersonTests"
                   moduleName = "SimpleDomainModelTests"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/iguest/Desktop/domainmodeling/SimpleDomainModel/SimpleDomainModelTests/PersonTests.swift"
-                  timestampString = "482128798.312589"
+                  urlString = "file:///Users/iguest/Desktop/domain-modeling/SimpleDomainModel/SimpleDomainModelTests/PersonTests.swift"
+                  timestampString = "482196039.859357"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "11"
@@ -96,14 +96,14 @@
                   offsetFromSymbolStart = "65">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "SimpleDomainModelTests.PersonTests.init () -&gt; SimpleDomainModelTests.PersonTests"
                   moduleName = "SimpleDomainModelTests"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/iguest/Desktop/domainmodeling/SimpleDomainModel/SimpleDomainModelTests/PersonTests.swift"
-                  timestampString = "482128798.312768"
+                  urlString = "file:///Users/iguest/Desktop/domain-modeling/SimpleDomainModel/SimpleDomainModelTests/PersonTests.swift"
+                  timestampString = "482196039.859498"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "11"
@@ -120,12 +120,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SimpleDomainModel/main.swift"
-            timestampString = "482128401.284792"
+            timestampString = "482196680.160707"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "214"
-            endingLineNumber = "214"
+            startingLineNumber = "215"
+            endingLineNumber = "215"
             landmarkName = "householdIncome()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SimpleDomainModelTests/PersonTests.swift"
+            timestampString = "482196448.050746"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "testFamilyWithKids()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

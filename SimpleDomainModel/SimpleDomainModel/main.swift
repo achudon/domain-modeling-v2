@@ -106,7 +106,7 @@ public class Job {
     public func calculateIncome(hours: Int) -> Int {
         switch self.salary {
             case .Hourly(let val) :
-                return Int(val) * hours
+                return Int(val * Double(hours))
     
             case .Salary(let val) :
                 return Int(val)
@@ -140,7 +140,6 @@ public class Person {
         }
         
         set(value) {
-            print(age)
             if age >= 16 {
                 self._job = value
             } else {
@@ -169,7 +168,6 @@ public class Person {
     }
 
     public func toString() -> String {
-        print("[Person: firstName:\(self.firstName) lastName:\(self.lastName) age:\(self.age) job:\(self.job) spouse:\(self.spouse)]")
         return "[Person: firstName:\(self.firstName) lastName:\(self.lastName) age:\(self.age) job:\(self.job) spouse:\(self.spouse)]"
     }
 }
@@ -208,13 +206,17 @@ public class Family {
     }
 
     public func householdIncome() -> Int {
-        var income : Int = 0
+        var income = 0
+        
         for member in members {
             if member.job != nil {
-                income += member.job!.calculateIncome(2087)
+                print("member income \(member.job!.calculateIncome(2000))")
+                print("total income \(income)")
+                income = income + member.job!.calculateIncome(2000)
             }
+            print("income after update \(income)")
         }
-        print(income)
+        
         return income
     }
 }
