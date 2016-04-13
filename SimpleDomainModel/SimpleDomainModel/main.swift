@@ -23,9 +23,15 @@ public class TestMe {
 ////////////////////////////////////
 // Money
 //
-public struct Money {
+public struct Money : CustomStringConvertible {
     public var amount : Int
     public var currency : String
+    
+    public var description : String {
+        get{
+            return "\(self.currency)\(self.amount)"
+        }
+    }
   
     public func convert(to: String) -> Money {
         var newValue = self.amount
@@ -88,7 +94,19 @@ public struct Money {
 ////////////////////////////////////
 // Job
 //
-public class Job {
+public class Job : CustomStringConvertible {
+    public var description : String {
+        get {
+            switch self.salary {
+            case .Hourly(let val) {
+                return "\(self.title) $\(self.salary)"
+                }
+            case .Salary()
+            }
+            
+        }
+    }
+    
     public enum JobType {
         case Hourly(Double)
         case Salary(Int)
