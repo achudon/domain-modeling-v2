@@ -20,10 +20,40 @@ public class TestMe {
     }
 }
 
+protocol CustomStringConvertible {
+    var description : String { get }
+}
+
+protocol Mathematics {
+    func +(left: Money, right: Money) -> Money
+    
+    func -(left: Money, right: Money) -> Money
+}
+
+public func +(left: Money, right: Money) -> Money {
+    let result = left.add(right)
+    return result
+}
+
+public func -(left: Money, right: Money) -> Money {
+    let result = left.subtract(right)
+    return result
+}
+
+extension Double {
+    var USD: Money {return Money(amount: Int(self), currency: "USD")}
+    
+    var EUR: Money {return Money(amount: Int(self), currency: "EUR")}
+    
+    var GBP: Money {return Money(amount: Int(self), currency: "GBP")}
+    
+    var YEN: Money {return Money(amount: Int(self), currency: "YEN")}
+}
+
 ////////////////////////////////////
 // Money
 //
-public struct Money : CustomStringConvertible {
+public struct Money : CustomStringConvertible, Mathematics {
     public var amount : Int
     public var currency : String
     
@@ -98,10 +128,11 @@ public class Job : CustomStringConvertible {
     public var description : String {
         get {
             switch self.salary {
-            case .Hourly(let val) {
-                return "\(self.title) $\(self.salary)"
-                }
-            case .Salary()
+            case .Hourly(let val) :
+                print(val)
+                    return "\(self.title), $\(val) per hour"
+            case .Salary(let val) :
+                    return "\(self.title), $\(val) per year"
             }
             
         }
@@ -144,7 +175,24 @@ public class Job : CustomStringConvertible {
 ////////////////////////////////////
 // Person
 //
-public class Person {
+public class Person : CustomStringConvertible {
+    public var description : String {
+        get {
+            var personJob = "no job"
+            
+            var personSpouse = "no spouse"
+            
+            if self.job != nil {
+                personJob = self.job!.title
+            }
+            
+            if self.spouse != nil {
+                personSpouse = "\(self.spouse!.firstName) \(self.spouse!.lastName)"
+            }
+            return "[Person: firstName:\(self.firstName) lastName:\(self.lastName) age:\(self.age) job:\(personJob) spouse:\(personSpouse)]"
+        }
+    }
+    
     public var firstName : String = ""
     public var lastName : String = ""
     public var age : Int = 0
@@ -194,7 +242,21 @@ public class Person {
 ////////////////////////////////////
 // Family
 //
-public class Family {
+public class Family : CustomStringConvertible {
+    public var description : String {
+        get {
+            var familyString = "Family members: "
+            for member in members {
+                familyString += "\(member.description) "
+            }
+            
+            familyString += "Family income: \(householdIncome())"
+            
+            print(familyString)
+            
+            return familyString
+        }
+    }
     private var members : [Person] = []
 
     public init(spouse1: Person, spouse2: Person) {
